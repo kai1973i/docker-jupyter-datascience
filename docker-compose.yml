@@ -10,7 +10,7 @@ services:
       GRANT_SUDO: yes
       password: ${password}
     working_dir: /home/${nbuser}
-    user: ${nbuser}
+    user: root
     volumes:
       - jupyter_user:/home/${nbuser}
       - condadata:/opt/conda
