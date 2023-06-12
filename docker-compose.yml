@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  notebook:
+    image: jupyter/datascience-notebook:latest
+    ports:
+      - 8888:8888
+    environment:
+      CHOWN_HOME: yes
+    working_dir: /home/${nbuser}
+    user: ${nbuser}
+    volumes:
+      - jupyter_user:/home/${nbuser}
+      - condadata:/opt/conda
+volumes:
+  jupyter_user: {}
+  condadata: {}
+  
