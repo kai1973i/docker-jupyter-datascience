@@ -6,6 +6,7 @@ services:
     ports:
       - 8888:8888
     environment:
+      NB_USER: $nb_user
       CHOWN_HOME: yes
       GRANT_SUDO: yes
       password: $password
