@@ -9,11 +9,12 @@ services:
       CHOWN_HOME: yes
       GRANT_SUDO: yes
       password: ${password}
-    working_dir: /home/${nbuser}
+      CONDA_DIR: /home/${nb_user}/.conda/
+    working_dir: /home/${nb_user}
     user: root
     volumes:
-      - jupyter_user:/home/${nbuser}
-      - condadata:/opt/conda
+      - jupyter_user:/home/${nb_user}
+      - condadata:/home/conda
 volumes:
   jupyter_user: {}
   condadata: {}
