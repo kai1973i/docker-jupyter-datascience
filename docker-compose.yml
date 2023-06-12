@@ -6,15 +6,16 @@ services:
     ports:
       - 8888:8888
     environment:
-      NB_USER: $nb_user
+      NB_USER: ${nb_user}
       CHOWN_HOME: yes
       GRANT_SUDO: yes
-      password: $password
+      PASSWORD: ${password}
+      HOME: /home/${NB_USER}
       #CONDA_DIR: /home/$nb_user/.conda/
-    working_dir: /home/$nb_user
+    working_dir: /home/${nb_user}
     user: root
     volumes:
-      - jupyter_user:/home/$nb_user
+      - jupyter_user:/home/${nb_user}
       - condadata:/opt/conda
 volumes:
   jupyter_user: {}
