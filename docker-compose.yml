@@ -7,6 +7,7 @@ services:
       - 8888:8888
     environment:
       NB_USER: ${nb_user}
+      NB_GROUP: users
       CHOWN_HOME: yes
       GRANT_SUDO: yes
       PASSWORD: ${password}
