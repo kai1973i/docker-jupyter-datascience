@@ -2,6 +2,7 @@ version: '3'
 
 services:
   notebook:
+    restart: always
     image: jupyter/datascience-notebook:latest
     ports:
       - 8888:8888
